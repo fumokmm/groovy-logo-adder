@@ -1,0 +1,3 @@
+Usage
+1. > gradle
+2. > java -jar groovy-logo-adder.jar <your_icon_file_name>
