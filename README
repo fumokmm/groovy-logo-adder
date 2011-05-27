@@ -1,3 +1,19 @@
 Usage
-1. > gradle
-2. > java -jar groovy-logo-adder.jar <your_icon_file_name>
+
+1. Build
+
+  $ gradle
+
+  It will create groovy-logo-adder.jar.
+
+2. Run from GUI
+
+  $ java -jar groovy-logo-adder.jar
+
+    or
+
+  Double click 'groovy-logo-adder.jar'.
+
+3. Run from shell
+
+  $ java -jar groovy-logo-adder.jar <your_icon_file_name>
