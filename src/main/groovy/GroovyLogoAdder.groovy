@@ -11,7 +11,7 @@ class GroovyLogoAdder {
 
   BufferedImage iconImg = ImageIO.read(this.class.getResource('/images/groovy-logo.png'))
 
-  void makeImage(file) {
+  void makeImage(File file) {
     // イメージ作成
     BufferedImage yourImg = ImageIO.read(file)
 

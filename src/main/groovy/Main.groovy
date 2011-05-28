@@ -13,7 +13,7 @@ class Main {
   static void main(args) {
     if (args) {
       def adder = new GroovyLogoAdder()
-      args.each { adder.makeImage(it) }
+      args.each { adder.makeImage(new File(it)) }
     } else {
       performGUI()
     }
@@ -33,9 +33,9 @@ class Main {
             if (t.isDataFlavorSupported(DataFlavor.javaFileListFlavor)) {
               dtde.acceptDrop(DnDConstants.ACTION_REFERENCE)
               def adder = new GroovyLogoAdder()
-              def fileNameList = t.getTransferData(DataFlavor.javaFileListFlavor)
-              fileNameList.each {
-                adder.makeImage(it)
+              def fileList = t.getTransferData(DataFlavor.javaFileListFlavor)
+              fileList.each { File f ->
+                adder.makeImage(f)
               }
             }
         }
