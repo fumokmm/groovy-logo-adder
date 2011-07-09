@@ -1,2 +1,2 @@
 // ポジション
-enum Position { topLeft, topRight, bottomLeft, bottomRight }
+enum Position { topLeft, topRight, bottomLeft, bottomRight, center }

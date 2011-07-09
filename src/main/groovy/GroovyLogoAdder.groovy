@@ -25,7 +25,9 @@ class GroovyLogoAdder {
       (Position.topLeft)     : { [x: 0,                                    y: 0]                                      },
       (Position.topRight)    : { [x: yourImg.width - resizedIconImg.width, y: 0]                                      },
       (Position.bottomLeft)  : { [x: 0,                                    y: yourImg.height - resizedIconImg.height] },
-      (Position.bottomRight) : { [x: yourImg.width - resizedIconImg.width, y: yourImg.height - resizedIconImg.height] }
+      (Position.bottomRight) : { [x: yourImg.width - resizedIconImg.width, y: yourImg.height - resizedIconImg.height] },
+      (Position.center)      : { [x: (yourImg.width / 2 - resizedIconImg.width / 2) as int,
+                                  y: (yourImg.height / 2 - resizedIconImg.height / 2) as int] }
     ]
 
     // ロゴを追加

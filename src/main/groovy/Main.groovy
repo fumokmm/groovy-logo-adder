@@ -13,7 +13,7 @@ class Main {
   static void main(args) {
     if (args) {
       def analyze = {
-        def pos = args.grep(~/(top|bottom)(Right|Left)/)
+        def pos = args.grep(~/((top|bottom)(Right|Left)|center)/)
         def ratio = args.grep(~/\d+\%/)
         [pos    : (pos ? pos.first() : 'bottomRight') as Position,
          ratio  : ratio ? ratio.first() - '%' as int : 70,
