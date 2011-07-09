@@ -12,8 +12,19 @@ class Main {
 
   static void main(args) {
     if (args) {
+      def analyze = {
+        def pos = args.grep(~/(top|bottom)(Right|Left)/)
+        def ratio = args.grep(~/\d+\%/)
+        [pos    : (pos ? pos.first() : 'bottomRight') as Position,
+         ratio  : ratio ? ratio.first() - '%' as int : 70,
+         images : args - pos - ratio ]
+      }
       def adder = new GroovyLogoAdder()
-      args.each { adder.makeImage(new File(it)) }
+      analyze().with{ rslt ->
+        rslt.images.each {
+          adder.makeImage(new File(it), rslt.pos, rslt.ratio)
+        }
+      }
     } else {
       performGUI()
     }
@@ -35,7 +46,7 @@ class Main {
               def adder = new GroovyLogoAdder()
               def fileList = t.getTransferData(DataFlavor.javaFileListFlavor)
               fileList.each { File f ->
-                adder.makeImage(f)
+                adder.makeImage(f, 'bottomRight' as Position, 70)
               }
             }
         }
