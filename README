@@ -16,4 +16,17 @@ Usage
 
 3. Run from shell
 
-  $ java -jar groovy-logo-adder.jar <your_icon_file_name>
+  $ java -jar groovy-logo-adder.jar <your_icon_file_name> <image_creation_options...>
+
+  [image creation options]
+    topLeft     - Put logo at Top Left
+    topRight    - Put logo at Top Right
+    bottomLeft  - Put logo at Bottom Left
+    bottomRight - Put logo at Bottom Right (default)
+    center      - Put logo at center
+    xx%         - Set reduction ratio (default: 70%)
+
+  These options allowed random order setting.
+  If you setting plural, it will be selected first one.
+
+  ex) java -jar groovy-logo-adder.jar icon1.jpg icon2.jpg bottomLeft 50%
