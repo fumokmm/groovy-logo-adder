@@ -11,9 +11,15 @@ import java.awt.FlowLayout
 import javax.swing.BoxLayout
 
 class Main {
-
+  static final def TITLE = 'Groovy Logo Adder v0.11'
   static void main(args) {
     if (args) {
+      if (args.size() == 1 && args[0] == '-v') {
+        println TITLE
+        System.exit(0)
+      } else {
+        args -= '-v'
+      }
       def analyze = {
         def pos = args.grep(~/((top|bottom)(Right|Left)|center)/)
         def ratio = args.grep(~/\d+\%/)
@@ -35,7 +41,7 @@ class Main {
   static void performGUI() {
     def swing = new SwingBuilder()
     def frame = swing.frame(id   : 'mainFrame',
-                            title: 'Groovy Logo Adder v0.11',
+                            title: TITLE,
                             defaultCloseOperation: JFrame.EXIT_ON_CLOSE,
                             pack : true,
                             show : true) {
